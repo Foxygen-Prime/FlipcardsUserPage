@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flipcards!</title>
+  </head>
+  <body>
+  <h1>Create, modify, and use your flipcards here!</h1>
+    <h2>Login???</h2>
+    <form class="" action="/Login" method="post">
+      <input type="text" name="" value="Snippet">
+      <input type="text" name="" value="Tags">
+      <input type="Submit" name="" value="Submit">
+    </form>
+    <h3>{{#title}}{{title}}{{/title}}{{^title}}Code Collection{{/title}}</h3>
+  {{#results}}
+    <div class=>
+      <p>{{title}}<br>{{language}}</p>
+      <div class=>
+        {{body}}
+      </div>
+      <p>{{notes}}</p>
+      <p><span class=>Tags</span>{{tags}}</p>
+      {{#canEdit}}
+        <form action="/update/{{_id}}" method="get">
+          <input type="submit" value="Edit Snippet">
+        </form>
+        <form action="/delete/{{_id}}" method="post">
+          <input type="submit" value="Delete this">
+        </form>
+      {{/canEdit}}
+    </div>
+  {{/results}}
+
+  </body>
+</html>
+
+
+
+<!-- Allow the user to create multiple decks of flipcards
+Allow the user to create flipcards within a deck
+Allow the user to edit a flipcard
+Allow the user to delete a flipcard
+Allow the user to start a quiz using a flipcard deck
+Ideally, this quiz would show the cards randomly
+When a flipcard is flipped, allow the user to choose whether they answered successfully or unsuccessfully, and record that answer -->
